@@ -14,7 +14,7 @@ import {Vehicle} from '../components/Vehicles/entities';
 import {Starship} from '../components/Starships/entities';
 import {Film} from '../components/Films/entities';
 
-export const peopleSlice = createApi({
+export const peopleQueries = createApi({
   reducerPath: 'people',
   tagTypes: ['People'],
   baseQuery: fetchBaseQuery({baseUrl: 'https://swapi.dev/api'}),
@@ -77,4 +77,4 @@ export const {
   useGetStarshipQuery,
   useGetVehicleQuery,
   useGetFilmQuery,
-} = peopleSlice;
+} = peopleQueries;

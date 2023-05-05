@@ -1,11 +1,11 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {persistReducer, persistStore} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {peopleSlice} from '../features/people/redux/slice';
+import {peopleQueries} from '../features/people/redux/slice';
 import {reducer as fans} from '../features/fans/redux';
 
 export const rootReducer = combineReducers({
-  [peopleSlice.reducerPath]: peopleSlice.reducer,
+  [peopleQueries.reducerPath]: peopleQueries.reducer,
   fans,
 });
 
@@ -19,7 +19,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       immutableCheck: true,
       serializableCheck: false,
-    }).concat(peopleSlice.middleware),
+    }).concat(peopleQueries.middleware),
 });
 
 export const persistor = persistStore(store);
